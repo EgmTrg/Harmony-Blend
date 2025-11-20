@@ -1,0 +1,152 @@
+/* Arka plan */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(to bottom right, #ffe5cf, #ffe9f4, #ffe3ef);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kart */
+.login-card {
+  width: 100%;
+  max-width: 600px;
+  min-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f1f1;
+}
+
+/* HB logo kutusu */
+.logo-box {
+  width: 150px;
+  height: 150px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff9d42, #ff4d92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: white;
+  font-size: 20px;
+  margin: 0 auto 14px auto;
+}
+
+/* Başlık */
+.login-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 28px;
+}
+
+/* Label */
+label {
+  display: block;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* Input */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: #ff4da1;
+  outline: none;
+}
+
+/* Checkbox bölümü */
+.checkbox-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.checkbox-row input {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-row a {
+  color: #ff4da1;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.checkbox-row a:hover {
+  text-decoration: underline;
+}
+
+/* Giriş Yap butonu */
+.login-btn {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ff8a32, #ff2588);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.login-btn:hover {
+  opacity: 0.85;
+}
+
+/* Alt link */
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 18px;
+}
+
+.signup-text a {
+  color: #ff8a32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Telif */
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  color: #aaa;
+}

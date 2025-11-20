@@ -1,0 +1,110 @@
+/* -----------------------------------------------------
+   Global Varsayılan Ayarlar
+----------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Scrollbar düzenleme (modern görünüm) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d3d3d3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bcbcbc;
+}
+
+/* -----------------------------------------------------
+   Responsive Kullanım
+----------------------------------------------------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Link reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* List reset */
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* -----------------------------------------------------
+   HarmonyBlend Tema Renkleri (Opsiyonel)
+----------------------------------------------------- */
+
+:root {
+  --hb-orange: #ff8a32;
+  --hb-pink: #ff4da1;
+  --hb-gradient: linear-gradient(to right, #ff8a32, #ff2588);
+  --hb-bg-light: #fff5ee;
+}
+
+/* -----------------------------------------------------
+   Global Container (İleride diğer sayfalarda kullanılabilir)
+----------------------------------------------------- */
+
+.hb-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* -----------------------------------------------------
+   Genel Page Wrapper
+----------------------------------------------------- */
+
+.page-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* -----------------------------------------------------
+   Animasyonlar
+----------------------------------------------------- */
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
