@@ -7,12 +7,10 @@ export default function Login() {
     console.log(
       "Veriler cekildi simdi tanimlama zamani alttaki satirda da cekilen verileri degiskenlere atiyoruz."
     );
-    setEmail("");
-    setPassword("");
   }, []);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("admin");
+  const [password, setPassword] = useState("123");
   const [loading, setLoading] = useState(false);
 
   const LoginBtn_Action = async (e) => {
@@ -24,7 +22,7 @@ export default function Login() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email: brand,
+          email: email,
           password: password,
         }),
       });
@@ -32,9 +30,7 @@ export default function Login() {
       const result = await response.json();
 
       if (result.success) {
-        console.log("Giriş başarılı:", result);
         localStorage.setItem("token", result.token);
-        // yönlendirme
         window.location.href = "/home";
       } else {
         alert(result.message || "Giriş başarısız");
@@ -88,7 +84,12 @@ export default function Login() {
         </div>
 
         {/* Giriş Yap Butonu */}
-        <button className="login-btn" type="submit" onClick={LoginBtn_Action}>
+        <button
+          className="login-btn"
+          type="submit"
+          onClick={LoginBtn_Action}
+          onSubmit={LoginBtn_Action}
+        >
           Giriş Yap
         </button>
       </form>
