@@ -1,5 +1,5 @@
 /* Arka plan */
-body {
+.LoginPage-Body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
@@ -27,7 +27,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #ff9d42, #ff4d92);
+  /* background: linear-gradient(135deg, #ff9d42, #ff4d92); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +144,7 @@ input:focus {
 }
 
 /* Telif */
-.footer {
+.footer-login {
   text-align: center;
   margin-top: 25px;
   font-size: 12px;

@@ -1,0 +1,12 @@
+.hb-footer {
+  height: 44px;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  font-size: 12px;
+  color: var(--text-muted);
+  box-sizing: border-box;
+}

@@ -1,0 +1,39 @@
+@media (max-width: 900px) {
+  .hb-topbar {
+    grid-template-columns: minmax(0, 1.5fr) auto;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+    padding-inline: 60px 14px;
+  }
+
+  .hb-topbar-center {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+
+  .hb-search {
+    font-size: 13px;
+  }
+
+  .hb-topbar-left h1 {
+    font-size: 18px;
+  }
+
+  .hb-topbar-left p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hb-topbar {
+    padding-inline: 56px 8px;
+  }
+
+  .hb-topbar-right {
+    gap: 4px;
+  }
+
+  .hb-logout {
+    padding-inline: 10px;
+  }
+}

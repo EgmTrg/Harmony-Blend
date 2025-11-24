@@ -1,0 +1,34 @@
+@media (max-width: 1024px) {
+  .hb-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hb-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hb-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hb-app-content {
+    padding-inline: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hb-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hb-hero-actions .ghost,
+  .hb-hero-actions .primary {
+    width: 100%;
+    text-align: center;
+  }
+}
