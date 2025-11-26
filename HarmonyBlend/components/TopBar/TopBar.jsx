@@ -33,7 +33,11 @@ export default function TopBar() {
           {theme === "dark" ? "🌞" : "🌙"}
         </button>
 
-        <button className="hb-logout" type="button">
+        <button
+          className="hb-logout"
+          type="button"
+          onClick={() => (window.location.href = "/")}
+        >
           Çıkış
         </button>
       </div>

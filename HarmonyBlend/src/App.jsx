@@ -1,30 +1,23 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login/Login.jsx";
-import Dashboard from "./pages/Dashboard/Dashboard.jsx";
-import EmptyTheme from "./pages/EmptyTheme/EmptyTheme.jsx";
-import "./App.css";
+import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import EmptyTheme from "./pages/EmptyTheme/EmptyTheme";
+import AppLayout from "./Layout/AppLayout.jsx";
 
 function App() {
   return (
     <Routes>
-      {/* Public Route */}
+      {/* Login hiçbir layout kullanmıyor */}
       <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
 
-      {/* Dashboard */}
-      <Route path="/dashboard" element={<Dashboard />} />
-
-      {/* Orders */}
-      <Route path="/orders" element={<EmptyTheme />} />
-
-      {/* Reports */}
-      <Route path="/orders" element={<EmptyTheme />} />
-
-      {/* Yeni sayfalar için boş template */}
-      <Route path="/empty" element={<EmptyTheme />} />
-
-      {/* Eski HomePage kaldırılacaksa gerek yok, bırakabilirsin de */}
-      {/* <Route path="/home" element={<HomePage />} /> */}
+      {/* Uygulama içi sayfalar ortak layout kullanıyor */}
+      <Route element={<AppLayout />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/orders" element={<EmptyTheme />} />
+        <Route path="/reports" element={<EmptyTheme />} />
+        <Route path="/empty" element={<EmptyTheme />} />
+      </Route>
     </Routes>
   );
 }

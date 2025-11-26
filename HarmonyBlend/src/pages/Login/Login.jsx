@@ -9,39 +9,48 @@ export default function Login() {
     );
   }, []);
 
-  const [email, setEmail] = useState("admin");
+  const [email, setEmail] = useState("a@a.com");
   const [password, setPassword] = useState("123");
   const [loading, setLoading] = useState(false);
 
-  const LoginBtn_Action = async (e) => {
+  const LoginBtn_Action = (e) => {
     e.preventDefault();
-    setLoading(true);
-
-    try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        localStorage.setItem("token", result.token);
-        window.location.href = "/home";
-      } else {
-        alert(result.message || "Giriş başarısız");
-      }
-    } catch (err) {
-      console.error("Hata:", err);
-      alert("Sunucuya bağlanılamadı.");
-    } finally {
-      setLoading(false);
+    if (email === "a@a.com" && password === "123") {
+      window.location.href = "/dashboard";
+    } else {
+      alert("Email veya sifre hatali!");
     }
   };
+
+  // const LoginBtn_Action = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+
+  //   try {
+  //     const response = await fetch("http://localhost:5000/api/auth/login", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({
+  //         email: email,
+  //         password: password,
+  //       }),
+  //     });
+
+  //     const result = await response.json();
+
+  //     if (result.success) {
+  //       localStorage.setItem("token", result.token);
+  //       window.location.href = "/home";
+  //     } else {
+  //       alert(result.message || "Giriş başarısız");
+  //     }
+  //   } catch (err) {
+  //     console.error("Hata:", err);
+  //     alert("Sunucuya bağlanılamadı.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div className="LoginPage-Body">
@@ -52,18 +61,18 @@ export default function Login() {
         </div>
 
         {/* Başlıklar */}
-
         <p className="login-subtitle">Sipariş ve iletişimin merkezi</p>
 
         {/* Form */}
-        <form>
+        <form onSubmit={LoginBtn_Action}>
           {/* E-posta */}
           <label htmlFor="email">E-posta</label>
           <input
             id="email"
             type="email"
             placeholder="ornek@firma.com"
-            onChange={(newValue) => setEmail(newValue.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           {/* Şifre */}
@@ -72,7 +81,8 @@ export default function Login() {
             id="password"
             type="password"
             placeholder="••••••••"
-            onChange={(newValue) => setPassword(newValue.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           {/* Beni Hatırla + Şifremi unuttum */}
@@ -80,17 +90,11 @@ export default function Login() {
             <label>
               <input type="checkbox" /> Beni hatırla
             </label>
-
             <a href="#">Şifremi unuttum</a>
           </div>
 
           {/* Giriş Yap Butonu */}
-          <button
-            className="login-btn"
-            type="submit"
-            onClick={LoginBtn_Action}
-            onSubmit={LoginBtn_Action}
-          >
+          <button className="login-btn" type="submit">
             Giriş Yap
           </button>
         </form>

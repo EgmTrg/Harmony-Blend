@@ -1,7 +1,16 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import "./Sidebar.responsive.css";
 
-export default function Sidebar({ active = "dashboard" }) {
+export default function Sidebar() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const currentPath =
+    location.pathname === "/"
+      ? "dashboard"
+      : location.pathname.replace("/", "");
+
   const menuItems = [
     { key: "dashboard", label: "Kontrol Paneli" },
     { key: "orders", label: "Siparişler" },
@@ -17,6 +26,10 @@ export default function Sidebar({ active = "dashboard" }) {
     sidebar.classList.toggle("open");
   };
 
+  const handleNavigate = (key) => {
+    navigate(`/${key}`);
+  };
+
   return (
     <>
       <button className="hb-hamburger" onClick={handleHamburger}>
@@ -26,7 +39,7 @@ export default function Sidebar({ active = "dashboard" }) {
       <aside className="hb-sidebar">
         <div className="hb-sidebar-brand">
           <img
-            src="..\src\assets\logo\hb-logo-transparant.png"
+            src="../src/assets/logo/hb-logo-transparant.png"
             alt="HarmonyBlend Logo"
             className="hb-sidebar-logo"
           />
@@ -37,9 +50,11 @@ export default function Sidebar({ active = "dashboard" }) {
             {menuItems.map((item) => (
               <li
                 key={item.key}
-                className={item.key === active ? "active" : ""}
+                className={currentPath === item.key ? "active" : ""}
               >
-                <button type="button">{item.label}</button>
+                <button type="button" onClick={() => handleNavigate(item.key)}>
+                  {item.label}
+                </button>
               </li>
             ))}
           </ul>
