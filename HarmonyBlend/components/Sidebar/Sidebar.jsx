@@ -1,15 +1,15 @@
+// src/components/Sidebar/Sidebar.jsx
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import "./Sidebar.responsive.css";
+import logo from "../../src/assets/logo/hb-logo-transparant.png";
 
 export default function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const currentPath =
-    location.pathname === "/"
-      ? "dashboard"
-      : location.pathname.replace("/", "");
+  // /dashboard -> "dashboard", /orders -> "orders"...
+  const currentPath = location.pathname.split("/")[1] || "";
 
   const menuItems = [
     { key: "dashboard", label: "Kontrol Paneli" },
@@ -38,11 +38,7 @@ export default function Sidebar() {
 
       <aside className="hb-sidebar">
         <div className="hb-sidebar-brand">
-          <img
-            src="../src/assets/logo/hb-logo-transparant.png"
-            alt="HarmonyBlend Logo"
-            className="hb-sidebar-logo"
-          />
+          <img src={logo} alt="HarmonyBlend Logo" className="hb-sidebar-logo" />
         </div>
 
         <nav className="hb-sidebar-nav">

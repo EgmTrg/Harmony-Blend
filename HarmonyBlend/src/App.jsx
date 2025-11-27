@@ -1,4 +1,6 @@
+// src/App.jsx
 import { Routes, Route } from "react-router-dom";
+import "./assets/css/theme.css"; // global tema
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import EmptyTheme from "./pages/EmptyTheme/EmptyTheme";
@@ -11,7 +13,7 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
 
-      {/* Uygulama içi sayfalar ortak layout kullanıyor */}
+      {/* Yönetim paneli sayfaları ortak layout içinde */}
       <Route element={<AppLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/orders" element={<EmptyTheme />} />

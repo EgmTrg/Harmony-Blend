@@ -1,5 +1,5 @@
+// src/pages/Dashboard/Dashboard.jsx
 import "../../assets/css/theme.css";
-import "../../assets/css/layout.css";
 import "./Dashboard.css";
 import "./Dashboard.responsive.css";
 

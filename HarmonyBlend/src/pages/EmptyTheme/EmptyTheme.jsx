@@ -1,6 +1,6 @@
 import "../../assets/css/theme.css";
 
-import "../../assets/css/layout.css";
+import "../../Layout/AppLayout.jsx";
 import "./EmptyTheme.css";
 import "./EmptyTheme.responsive.css";
 

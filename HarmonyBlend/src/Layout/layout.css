@@ -1,9 +1,17 @@
-/* .hb-app-shell {
+.hb-app-shell {
   display: flex;
   min-height: 100vh;
-  background: radial-gradient(circle at top left, rgba(255, 138, 50, 0.14), transparent 55%),
-              radial-gradient(circle at bottom right, rgba(255, 37, 136, 0.16), transparent 60%),
-              var(--bg-body);
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 138, 50, 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 37, 136, 0.16),
+      transparent 60%
+    ),
+    var(--bg-body);
   color: var(--text-main);
 }
 
@@ -18,4 +26,9 @@
   flex: 1;
   padding: 20px 22px 18px 22px;
   box-sizing: border-box;
-} */
+}
+@media (max-width: 600px) {
+  .hb-app-content {
+    padding: 15px 16px 14px 16px;
+  }
+}

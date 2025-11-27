@@ -57,7 +57,11 @@ export default function Login() {
       <div className="login-card">
         {/* Logo Kutusu */}
         <div className="logo-box">
-          <img src="..\..\src\assets\logo\hb-logo-transparant-new.png" alt="" />
+          <img
+            src="..\..\src\assets\logo\hb-logo-transparant-new.png"
+            alt=""
+            className="hb-login-logo"
+          />
         </div>
 
         {/* Başlıklar */}

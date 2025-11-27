@@ -1,3 +1,9 @@
+/* Login ekranında global arka plan yazılarını yok et */
+body *::before,
+body *::after {
+  content: unset !important;
+}
+
 /* Arka plan */
 .LoginPage-Body {
   margin: 0;
@@ -37,6 +43,11 @@
   margin: 0 auto 14px auto;
 }
 
+.hb-login-logo {
+  width: 220px;
+  height: auto;
+}
+
 /* Başlık */
 .login-title {
   text-align: center;
@@ -49,7 +60,7 @@
   text-align: center;
   font-size: 14px;
   color: #666;
-  margin-bottom: 28px;
+  margin-bottom: 2px;
 }
 
 /* Label */
@@ -57,13 +68,13 @@ label {
   display: block;
   font-size: 14px;
   color: #444;
-  margin-bottom: 6px;
+  margin: 6px 0px;
 }
 
 /* Input */
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 95%;
   padding: 12px 14px;
   border-radius: 10px;
   border: 1px solid #dcdcdc;
