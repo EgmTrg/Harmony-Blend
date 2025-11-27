@@ -175,7 +175,7 @@ It delivers a transparent, fast, and reliable management experience for multi‑
 
 ### **Dashboard (Dark Mode)**
 
-![Dashboard Dark](./Docs/V.0.0.2/HarmonyBlend_Homepage_LIGHT.jpg)
+![Dashboard Dark](./Docs/V.0.0.2/HarmonyBlend_Homepage_DARK.jpg)
 
 ---
 
